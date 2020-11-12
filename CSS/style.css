@@ -1,0 +1,18 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: none;
+}
+.page-title {
+  font-family: Poppins, sans-serif;
+  text-align: center;
+  font-weight: 700;
+  font-size: 44px;
+  margin: 40px;
+}
+.classes {
+  list-style: none;
+}
+.class {
+  text-decoration: none;
+}

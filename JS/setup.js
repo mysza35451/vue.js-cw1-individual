@@ -1,0 +1,78 @@
+let webStore = new Vue({
+  el: "#app",
+  data: {
+    title: "Lessons to buy",
+    classes: [
+      {
+        img: "class-1",
+        subject: "Maths",
+        location: "London",
+        price: 10,
+        spaces: 5,
+      },
+      {
+        img: "class-1",
+        subject: "Maths",
+        location: "London",
+        price: 10,
+        spaces: 5,
+      },
+      {
+        img: "class-1",
+        subject: "Maths",
+        location: "London",
+        price: 10,
+        spaces: 5,
+      },
+      {
+        img: "class-1",
+        subject: "Maths",
+        location: "London",
+        price: 10,
+        spaces: 5,
+      },
+      {
+        img: "class-1",
+        subject: "Maths",
+        location: "London",
+        price: 10,
+        spaces: 5,
+      },
+      {
+        img: "class-1",
+        subject: "Maths",
+        location: "London",
+        price: 10,
+        spaces: 5,
+      },
+      {
+        img: "class-1",
+        subject: "Maths",
+        location: "London",
+        price: 10,
+        spaces: 5,
+      },
+      {
+        img: "class-1",
+        subject: "Maths",
+        location: "London",
+        price: 10,
+        spaces: 5,
+      },
+      {
+        img: "class-1",
+        subject: "Maths",
+        location: "London",
+        price: 10,
+        spaces: 5,
+      },
+      {
+        img: "class-1",
+        subject: "Maths",
+        location: "London",
+        price: 10,
+        spaces: 5,
+      },
+    ],
+  },
+});

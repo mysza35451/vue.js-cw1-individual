@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CW1 Maciej Individual Work</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/CSS/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <h1 class="page-title">{{title}}</h1>
+      <ul class="classes">
+        <li v-for="item in classes" class="class">
+          <div class="class-box"></div>
+        </li>
+      </ul>
+    </div>
+
+    <script src="../JS/setup.js"></script>
+  </body>
+</html>
