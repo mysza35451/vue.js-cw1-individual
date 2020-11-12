@@ -3,6 +3,9 @@ body {
   padding: 0;
   box-sizing: none;
 }
+.class-wrapper {
+  width: 100%;
+}
 .page-title {
   font-family: Poppins, sans-serif;
   text-align: center;
@@ -12,7 +15,25 @@ body {
 }
 .classes {
   list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
 }
 .class {
   text-decoration: none;
+  text-align: center;
+}
+.class-box {
+  width: 200px;
+  height: 500px;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  background-color: lightgray;
+}
+.image {
+  width: 200px;
+  height: 200px;
 }

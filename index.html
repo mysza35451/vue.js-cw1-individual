@@ -13,11 +13,19 @@
     <link rel="stylesheet" href="/CSS/style.css" />
   </head>
   <body>
-    <div id="app">
+    <div id="app" class="class-wrapper">
       <h1 class="page-title">{{title}}</h1>
       <ul class="classes">
         <li v-for="item in classes" class="class">
-          <div class="class-box"></div>
+          <div class="class-box">
+            <img class="image" v-bind:src="item.img" alt="" />
+            <h1>{{item.subject}}</h1>
+            <p>{{item.location}}</p>
+            <p>£{{item.price}}</p>
+            <p>{{item.spaces}}</p>
+
+            <button>Add to cart</button>
+          </div>
         </li>
       </ul>
     </div>

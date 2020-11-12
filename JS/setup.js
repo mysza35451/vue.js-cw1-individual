@@ -4,17 +4,17 @@ let webStore = new Vue({
     title: "Lessons to buy",
     classes: [
       {
-        img: "class-1",
+        img: "/IMG/class-maths.jpg",
         subject: "Maths",
         location: "London",
-        price: 10,
+        price: 100,
         spaces: 5,
       },
       {
-        img: "class-1",
+        img: "/IMG/class-maths.jpg",
         subject: "Maths",
-        location: "London",
-        price: 10,
+        location: "Oxford",
+        price: 100,
         spaces: 5,
       },
       {
