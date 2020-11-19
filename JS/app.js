@@ -46,25 +46,25 @@ let webStore = new Vue({
       let attribute = document.getElementById("attribute").value;
 
       //sort descending for price
-      if (order == "descending" && attribute == "price") {
+      if (order == "ascending" && attribute == "price") {
         arrayOfClasses.sort(function (a, b) {
           return parseInt(a.price) - parseInt(b.price);
         });
       }
       //sort ascending for price
-      else if (order == "ascending" && attribute == "price") {
-        arrayOfClasses.sort(function (a, b) {
-          return parseInt(a.price) - parseInt(b.price);
-        });
-        arrayOfClasses.reverse();
-      } else if (order == "ascending" && attribute == "availability") {
+      else if (order == "descending" && attribute == "price") {
         arrayOfClasses.sort(function (a, b) {
           return parseInt(a.price) - parseInt(b.price);
         });
         arrayOfClasses.reverse();
       } else if (order == "descending" && attribute == "availability") {
         arrayOfClasses.sort(function (a, b) {
-          return parseInt(a.price) - parseInt(b.price);
+          return parseInt(a.spaces) - parseInt(b.spaces);
+        });
+        arrayOfClasses.reverse();
+      } else if (order == "ascending" && attribute == "availability") {
+        arrayOfClasses.sort(function (a, b) {
+          return parseInt(a.spaces) - parseInt(b.spaces);
         });
       }
       //sort ascending for subject

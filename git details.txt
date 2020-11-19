@@ -1,0 +1,7 @@
+git files link:
+
+https://github.com/mysza35451/vue.js-cw1-individual
+
+gitpages link:
+
+https://mysza35451.github.io/vue.js-cw1-individual/
