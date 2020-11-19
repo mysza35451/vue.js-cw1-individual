@@ -11,25 +11,68 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/CSS/style.css" />
+    <script src="/JS/lessons.js"></script>
   </head>
   <body>
-    <div id="app" class="class-wrapper">
-      <h1 class="page-title">{{title}}</h1>
-      <ul class="classes">
-        <li v-for="item in classes" class="class">
-          <div class="class-box">
-            <img class="image" v-bind:src="item.img" alt="" />
-            <h1>{{item.subject}}</h1>
-            <p>{{item.location}}</p>
-            <p>£{{item.price}}</p>
-            <p>{{item.spaces}}</p>
+    <div id="app" class="app-wrapper">
+      <h1 class="page-title">{{pageTitle}}</h1>
 
-            <button>Add to cart</button>
-          </div>
-        </li>
-      </ul>
+      <div v-if="showItems" class="class-wrapper">
+        <div class="sort-wrapper">
+          <label for="order">Sort by order:</label>
+          <select name="order" id="order">
+            <option value="ascending">Ascending</option>
+            <option value="descending">Descending</option>
+          </select>
+
+          <label for="attribute">Sort by attribute</label>
+          <select name="attribute" id="attribute">
+            <option value="subject">Subject</option>
+            <option value="location">Location</option>
+            <option value="price">Price</option>
+            <option value="availability">Availability</option>
+          </select>
+
+          <button v-on:click="initializeSort">Sort</button>
+        </div>
+        <ul class="classes">
+          <li v-for="(item, index) in classes" :key="index" class="class">
+            <div class="class-box">
+              <img class="image" v-bind:src="item.img" alt="" />
+              <h1>{{item.subject}}</h1>
+              <p>{{item.location}}</p>
+              <p>£{{item.price}}</p>
+              <p>{{item.spaces}}</p>
+
+              <button v-bind:id="index" v-on:click="addToBasket(index)">
+                Add to cart
+              </button>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div v-if="populatedLocalStorage" class="basket-button">
+        <button v-if="showBasketButton" v-on:click="loadBasketPage">
+          Basket
+        </button>
+      </div>
+      <div v-if="displayBasketClasses" class="basketWrapper">
+        <ul class="classes">
+          <li v-for="item in basketClassesArray" class="class">
+            <div class="class-box">
+              <img class="image" v-bind:src="item.img" alt="" />
+              <h1>{{item.subject}}</h1>
+              <p>{{item.location}}</p>
+              <p>£{{item.price}}</p>
+
+              <button v-on:click="removeClass(item.id)">Remove</button>
+            </div>
+          </li>
+        </ul>
+        <button v-on:click="loadMainPage">Return to shop</button>
+      </div>
     </div>
 
-    <script src="../JS/setup.js"></script>
+    <script src="../JS/app.js"></script>
   </body>
 </html>

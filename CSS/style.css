@@ -3,7 +3,7 @@ body {
   padding: 0;
   box-sizing: none;
 }
-.class-wrapper {
+.app-wrapper {
   width: 100%;
 }
 .page-title {
@@ -36,4 +36,14 @@ body {
 .image {
   width: 200px;
   height: 200px;
+}
+.basket-button {
+  width: 100%;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.basket-button button {
+  width: 500px;
+  height: 50px;
 }
