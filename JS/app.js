@@ -13,7 +13,7 @@ let webStore = new Vue({
     basketClassesArray: [],
     displayBasketClasses: false,
     userName: "",
-    userNum: 0,
+    userNum: null,
     validationMsgName: "",
     validationMsgNum: "",
     nameCorrect: false,
@@ -32,7 +32,7 @@ let webStore = new Vue({
     userNum(value) {
       // binding this to the data value in the email input
       this.userNum = value;
-      this.checkUserNum(parseInt(value));
+      this.checkUserNum(value);
     },
   },
   methods: {
@@ -184,15 +184,18 @@ let webStore = new Vue({
         this.validationMsgName = "";
         this.nameCorrect = true;
       } else {
-        this.validationMsgName = "Wrong input";
+        this.validationMsgName = "Wrong input - only letters are allowed!";
+        this.nameCorrect = false;
       }
     },
     checkUserNum: function (value) {
-      if (isNaN(value)) {
-        this.validationMsgNum = "Wrong input";
-      } else {
+      console.log(Number.isInteger(value));
+      if (/^\d+$/.test(value)) {
         this.validationMsgNum = "";
         this.numCorrect = true;
+      } else {
+        this.validationMsgNum = "Wrong input - only numbers are allowed!";
+        this.numCorrect = false;
       }
     },
   },
