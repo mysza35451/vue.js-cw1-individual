@@ -69,28 +69,39 @@
             </div>
           </li>
         </ul>
+        <div v-if="displayFields">
+          <label for="fname">Your name:</label>
+          <input
+            type="text"
+            id="fname"
+            name="fname"
+            v-model="userName"
+            required
+          />
+          <p style="color: red">{{validationMsgName}}</p>
+          <label for="pnumber">Phone number:</label>
+          <input
+            type="text"
+            id="pnumber"
+            name="pnumber"
+            v-model="userNum"
+            required
+          />
+          <p style="color: red">{{validationMsgNum}}</p>
 
-        <label for="fname">Your name:</label>
-        <input
-          type="text"
-          id="fname"
-          name="fname"
-          v-model="userName"
-          required
-        />
-        <p style="color: red">{{validationMsgName}}</p>
-        <label for="pnumber">Phone number:</label>
-        <input
-          type="text"
-          id="pnumber"
-          name="pnumber"
-          v-model="userNum"
-          required
-        />
-        <p style="color: red">{{validationMsgNum}}</p>
+          <button v-if="numCorrect && nameCorrect" v-on:click="loadCheckOut">
+            Check out
+          </button>
+        </div>
 
-        <button v-if="numCorrect && nameCorrect">Confirm purchase</button>
         <button v-on:click="loadMainPage">Return to shop</button>
+        <div v-if="displayCheckOut" class="confirmation" style="width: 100%">
+          <h1 style="color: green; text-align: center">
+            {{confirmationTitle}}
+          </h1>
+          <p style="text-align: center">{{confirmationSub}}</p>
+          <p style="text-align: center">{{confirmationRef}}</p>
+        </div>
       </div>
     </div>
 

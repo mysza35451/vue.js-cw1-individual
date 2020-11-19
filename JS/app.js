@@ -11,6 +11,7 @@ let webStore = new Vue({
 
     //basket page data
     basketClassesArray: [],
+    displayFields: true,
     displayBasketClasses: false,
     userName: "",
     userNum: null,
@@ -18,6 +19,10 @@ let webStore = new Vue({
     validationMsgNum: "",
     nameCorrect: false,
     numCorrect: false,
+    displayCheckOut: false,
+    confirmationTitle: "Order Completed! Here is your confirmation",
+    confirmationSub: "Your order reference is:",
+    confirmationRef: "xxxxxxxxxxxxx",
   },
   mounted: function () {
     //allows to execute methods on pageload
@@ -148,6 +153,7 @@ let webStore = new Vue({
             };
             this.basketClassesArray.push(basketClassesArrayTemp);
             this.displayBasketClasses = true;
+            this.displayFields = true;
           }
         }
       }
@@ -174,6 +180,8 @@ let webStore = new Vue({
           if (indexArray.length !== 0) {
             localStorage.basketIndexArray = JSON.stringify(indexArray);
             this.loadBasketPage();
+          } else {
+            this.displayFields = false;
           }
           break;
         }
@@ -197,6 +205,10 @@ let webStore = new Vue({
         this.validationMsgNum = "Wrong input - only numbers are allowed!";
         this.numCorrect = false;
       }
+    },
+
+    loadCheckOut: function () {
+      this.displayCheckOut = true;
     },
   },
 });
