@@ -71,10 +71,25 @@
         </ul>
 
         <label for="fname">Your name:</label>
-        <input type="text" id="fname" name="fname" /><br /><br />
+        <input
+          type="text"
+          id="fname"
+          name="fname"
+          v-model="userName"
+          required
+        />
+        <p style="color: red">{{validationMsgName}}</p>
         <label for="pnumber">Phone number:</label>
-        <input type="text" id="pnumber" name="pnumber" /><br /><br />
-        <button>Confirm purchase</button>
+        <input
+          type="text"
+          id="pnumber"
+          name="pnumber"
+          v-model="userNum"
+          required
+        />
+        <p style="color: red">{{validationMsgNum}}</p>
+
+        <button v-if="numCorrect && nameCorrect">Confirm purchase</button>
         <button v-on:click="loadMainPage">Return to shop</button>
       </div>
     </div>

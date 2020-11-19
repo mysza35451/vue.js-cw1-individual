@@ -12,10 +12,28 @@ let webStore = new Vue({
     //basket page data
     basketClassesArray: [],
     displayBasketClasses: false,
+    userName: "",
+    userNum: 0,
+    validationMsgName: "",
+    validationMsgNum: "",
+    nameCorrect: false,
+    numCorrect: false,
   },
   mounted: function () {
     //allows to execute methods on pageload
     this.checkLocalStorage();
+  },
+  watch: {
+    userName(value) {
+      // binding this to the data value in the email input
+      this.userName = value;
+      this.checkUserName(value);
+    },
+    userNum(value) {
+      // binding this to the data value in the email input
+      this.userNum = value;
+      this.checkUserNum(parseInt(value));
+    },
   },
   methods: {
     initializeSort: function (event) {
@@ -159,6 +177,22 @@ let webStore = new Vue({
           }
           break;
         }
+      }
+    },
+    checkUserName: function (value) {
+      if (/^[A-Za-z]+$/.test(value)) {
+        this.validationMsgName = "";
+        this.nameCorrect = true;
+      } else {
+        this.validationMsgName = "Wrong input";
+      }
+    },
+    checkUserNum: function (value) {
+      if (isNaN(value)) {
+        this.validationMsgNum = "Wrong input";
+      } else {
+        this.validationMsgNum = "";
+        this.numCorrect = true;
       }
     },
   },
