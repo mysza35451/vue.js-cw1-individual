@@ -86,16 +86,16 @@ let webStore = new Vue({
         });
       } else if (order == "descending" && attribute == "location") {
         arrayOfClasses.sort(function (a, b) {
-          var stringA = a.subject.toLowerCase(),
-            stringB = b.subject.toLowerCase();
+          var stringA = a.location.toLowerCase(),
+            stringB = b.location.toLowerCase();
           if (stringA > stringB) return -1;
           if (stringA < stringB) return 1;
           return 0; //default return value (no sorting)
         });
       } else if (order == "ascending" && attribute == "location") {
         arrayOfClasses.sort(function (a, b) {
-          var stringA = a.subject.toLowerCase(),
-            stringB = b.subject.toLowerCase();
+          var stringA = a.location.toLowerCase(),
+            stringB = b.location.toLowerCase();
           if (stringA < stringB) return -1;
           if (stringA > stringB) return 1;
           return 0; //default return value (no sorting)
